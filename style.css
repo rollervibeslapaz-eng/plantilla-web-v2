@@ -1,0 +1,361 @@
+/* 1. RESETEO GLOBAL (Se agregó el '*' que faltaba) */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+/* 2. ESTILOS BASE */
+body {
+    font-family: 'Inter', Arial, sans-serif; /* Fuente moderna agregada */
+    background: #070b1a;
+    color: #ffffff;
+    line-height: 1.6;
+}
+
+a {
+    color: inherit;
+    text-decoration: none;
+    transition: opacity 0.3s ease;
+}
+
+a:hover {
+    opacity: 0.8;
+}
+
+/* 3. HEADER Y NAVEGACIÓN */
+.header {
+    width: 100%;
+    padding: 20px 8%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: #070b1a;
+    position: sticky;
+    top: 0;
+    z-index: 100; /* Aumentado para estar siempre encima */
+    border-bottom: 1px solid rgba(255,255,255,0.05);
+}
+
+.logo {
+    font-size: 24px;
+    font-weight: 700;
+    color: #ffb703;
+}
+
+.nav {
+    display: flex;
+    gap: 24px;
+}
+
+.nav a {
+    color: #d8d8d8;
+    font-size: 15px;
+    font-weight: 600;
+}
+
+.nav a:hover {
+    color: #ffb703;
+}
+
+/* 4. SECCIÓN HERO */
+.hero {
+    min-height: 85vh;
+    padding: 70px 8%;
+    display: grid;
+    grid-template-columns: 1.2fr 0.8fr;
+    gap: 40px;
+    align-items: center;
+    background: radial-gradient(circle at top right, #123a7a, #070b1a 55%);
+}
+
+.badge {
+    display: inline-block;
+    background: #0d6efd;
+    color: #ffffff;
+    padding: 8px 14px;
+    border-radius: 20px;
+    margin-bottom: 20px;
+    font-size: 14px;
+    font-weight: 600;
+}
+
+.hero h1 {
+    font-size: 54px;
+    line-height: 1.1;
+    margin-bottom: 20px;
+    font-weight: 700;
+}
+
+.hero p {
+    color: #d8d8d8;
+    font-size: 18px;
+    max-width: 620px;
+    margin-bottom: 30px;
+}
+
+.hero-buttons {
+    display: flex;
+    gap: 15px;
+    flex-wrap: wrap;
+}
+
+.btn {
+    display: inline-block;
+    padding: 14px 28px;
+    border-radius: 10px;
+    font-weight: 700;
+    font-size: 16px;
+    text-align: center;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 15px rgba(0,0,0,0.3);
+    opacity: 1; /* Anula el opacity del a:hover general */
+}
+
+.primary {
+    background: #ffb703;
+    color: #070b1a;
+}
+
+.secondary {
+    border: 2px solid #ffffff;
+    color: #ffffff;
+}
+
+.hero-card {
+    background: rgba(255,255,255,0.08);
+    border: 1px solid rgba(255,255,255,0.15);
+    border-radius: 22px;
+    padding: 35px;
+    backdrop-filter: blur(10px);
+}
+
+.hero-card h3 {
+    font-size: 22px;
+    margin-bottom: 20px;
+    color: #ffb703;
+}
+
+.hero-card ul {
+    list-style: none;
+}
+
+.hero-card li {
+    margin-bottom: 12px;
+    font-size: 16px;
+    color: #d8d8d8;
+}
+
+/* 5. SECCIÓN DE BENEFICIOS */
+.benefits {
+    padding: 60px 8%;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 25px;
+    background: #0b1024;
+}
+
+/* 6. ESTILOS GENERALES DE SECCIÓN Y TARJETAS */
+.section {
+    padding: 80px 8%;
+    text-align: center;
+}
+
+.section h2 {
+    font-size: 40px;
+    margin-bottom: 45px;
+    font-weight: 700;
+}
+
+.grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 25px;
+}
+
+.card, .price-card {
+    background: rgba(255,255,255,0.06);
+    border: 1px solid rgba(255,255,255,0.12);
+    border-radius: 18px;
+    padding: 30px;
+    text-align: left;
+    transition: transform 0.3s ease;
+}
+
+.card:hover, .price-card:hover {
+    transform: translateY(-5px);
+    border-color: rgba(255,255,255,0.25);
+}
+
+.card h3, .price-card h3 {
+    font-size: 22px;
+    margin-bottom: 12px;
+    color: #ffffff;
+}
+
+.card p {
+    color: #d8d8d8;
+    font-size: 15px;
+}
+
+.price-card ul {
+    list-style: none;
+    margin: 20px 0;
+}
+
+.price-card li {
+    margin-bottom: 10px;
+    color: #d8d8d8;
+    font-size: 15px;
+    padding-left: 20px;
+    position: relative;
+}
+
+.price-card li::before {
+    content: "✓";
+    color: #ffb703;
+    position: absolute;
+    left: 0;
+    font-weight: bold;
+}
+
+.dark {
+    background: #0b1024;
+}
+
+.price {
+    font-size: 42px;
+    font-weight: 700;
+    color: #ffb703;
+    margin: 15px 0;
+}
+
+.featured {
+    border: 2px solid #ffb703;
+    transform: scale(1.05);
+    background: rgba(255, 183, 3, 0.05);
+}
+
+.featured:hover {
+    transform: scale(1.07);
+}
+
+/* 7. CONTACTO Y FOOTER */
+.contact p {
+    margin-bottom: 30px;
+    color: #d8d8d8;
+    font-size: 18px;
+    max-width: 600px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.footer {
+    text-align: center;
+    padding: 30px;
+    background: #050816;
+    color: #888;
+    font-size: 14px;
+    border-top: 1px solid rgba(255,255,255,0.05);
+}
+
+/* 8. BOTÓN FLOTANTE DE WHATSAPP */
+.whatsapp-float {
+    position: fixed;
+    bottom: 30px;
+    right: 30px;
+    background-color: #25d366;
+    color: #ffffff;
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 4px 15px rgba(37, 211, 102, 0.4);
+    z-index: 1000;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.whatsapp-float:hover {
+    transform: scale(1.1);
+    box-shadow: 0 6px 20px rgba(37, 211, 102, 0.6);
+    opacity: 1;
+}
+
+/* 9. MEDIA QUERIES (Diseño Adaptable a Celular) */
+@media (max-width: 850px) {
+    .header {
+        flex-direction: column;
+        gap: 15px;
+        padding: 15px 5%;
+    }
+    
+    .nav {
+        gap: 15px;
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+    
+    .hero {
+        grid-template-columns: 1fr;
+        text-align: center;
+        padding: 50px 5%;
+        min-height: auto;
+    }
+    
+    .hero h1 {
+        font-size: 36px;
+    }
+    
+    .hero p {
+        margin: 0 auto 30px auto;
+    }
+    
+    .hero-buttons {
+        justify-content: center;
+    }
+    
+    .hero-card {
+        margin-top: 20px;
+        text-align: left;
+    }
+    
+    .benefits,
+    .grid {
+        grid-template-columns: 1fr;
+        padding: 40px 5%;
+    }
+    
+    .section {
+        padding: 60px 5%;
+    }
+    
+    .section h2 {
+        font-size: 32px;
+    }
+    
+    .featured {
+        transform: scale(1);
+    }
+    
+    .featured:hover {
+        transform: scale(1.02);
+    }
+
+    .whatsapp-float {
+        width: 50px;
+        height: 50px;
+        bottom: 20px;
+        right: 20px;
+    }
+    
+    .whatsapp-float svg {
+        width: 26px;
+        height: 26px;
+    }
+}
